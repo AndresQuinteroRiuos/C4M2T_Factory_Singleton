@@ -1,9 +1,8 @@
 package Factory;
 
 public class NotificacionFactory {
-    public static Notificacion getNotificacion( TipoNotificacion tipo) {
-        switch (TipoNotificacion) {
-            
+    public static Notificacion getNotificacion(TipoNotificacion tipo) {
+        switch (tipo) {
             case EMAIL:
                 return new NotificacionEmail();
             case SMS:
@@ -11,7 +10,7 @@ public class NotificacionFactory {
             case PUSH:
                 return new NotificacionPush();
             default:
-                throw new IllegalArgumentException("Tipo de notificación no válido");
+                throw new IllegalArgumentException("Tipo de notificación no válido");
         }
     }
 }

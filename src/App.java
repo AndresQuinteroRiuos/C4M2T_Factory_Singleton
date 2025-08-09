@@ -1,3 +1,8 @@
+import Factory.Notificacion;
+import Factory.NotificacionFactory;
+import Factory.TipoNotificacion;
+import Singleton.Configuracion;
+
 public class App {
     
     public static void main(String[] args) {

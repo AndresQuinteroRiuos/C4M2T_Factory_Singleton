@@ -1,48 +1,43 @@
+package Singleton;
 
-
-Package C4M2T_Factory_Singleton.Singleton;
 public class Configuracion {
     private static Configuracion Instance;
 
-    Private String Username;
-    Private String Password;
-    Private String Email;
+    private final String username;
+    private final String password;
+    private String email;
 
-    public static Configuracion getInstance(String Username, String Password, String Email) {
+    public static Configuracion getInstance(String username, String password, String email) {
         if (Instance == null) {
-            Instance = new Configuracion(Username, Password, Email);
+            Instance = new Configuracion(username, password, email);
         }
         return Instance;
     }
 
-    Private Configuracion(String Username, String Password, String Email) {
-    this.Username = Username;
-    this.Password = Password;
-    this.Email = Email;
+    private Configuracion(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
 
+    public String getUsername() {
+        return username;
+    }
 
+    public String getPassword() {
+        return password;
+    }
 
-}
+    public String getEmail() {
+        return email;
+    }
 
-Public String getUsername() {
-    return Username;
-}
-Public String getPassword() {
-    return Password;
-}
-Public String getEmail() {
-    return Email;
-}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-Public Void SetEmail(String Email) {
-    this.Email = Email;
-}
-
-@Override
-public String toString() {
-
-    return "Configuracion [Username=" + Username + ", Password=" + Password + ", Email=" + Email+ "]";
-      
-}
-
+    @Override
+    public String toString() {
+        return "Configuracion [username=" + username + ", password=" + password + ", email=" + email + "]";
+    }
 }
